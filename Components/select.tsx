@@ -1,6 +1,6 @@
 import * as React from "@pwa-fundament/reactivity";
 
-export default function Select(
+export function Select(
   value: React.State<string>,
   options: React.ListState<string>
 ): HTMLSelectElement {

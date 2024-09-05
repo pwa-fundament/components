@@ -1,6 +1,6 @@
 import * as React from "@pwa-fundament/reactivity";
 
-export default function SplitView(data: [HTMLElement, HTMLElement][]) {
+export function SplitView(data: [HTMLElement, HTMLElement][]) {
   function scrollToIndex() {
     container.scrollLeft = 0;
   }

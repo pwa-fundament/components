@@ -1,6 +1,6 @@
 import * as React from "@pwa-fundament/reactivity";
 
-export default function Slider(
+export function Slider(
   value: React.State<number>,
   min: number = 0,
   max: number = 100,

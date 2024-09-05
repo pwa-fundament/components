@@ -1,6 +1,6 @@
 import * as React from "@pwa-fundament/reactivity";
 
-export default function Modal(
+export function Modal(
   isOpen: React.State<boolean>,
   mainElement: HTMLElement,
   buttons: HTMLButtonElement[]

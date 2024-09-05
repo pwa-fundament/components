@@ -12,7 +12,7 @@ export class PopoverCoordinates {
   }
 }
 
-export default function Popover(
+export function Popover(
   isOpen: React.State<boolean>,
   coordinates: PopoverCoordinates,
   mainElement: HTMLElement,

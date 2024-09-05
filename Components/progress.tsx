@@ -1,6 +1,6 @@
 import * as React from "@pwa-fundament/reactivity";
 
-export default function ProgressBar(
+export function ProgressBar(
   percentValueOrUndefined: React.State<number | undefined>
 ): HTMLProgressElement {
   const valueDiv: HTMLDivElement = <div></div>;
