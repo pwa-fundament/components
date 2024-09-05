@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/pwa-fundament/components#readme",
   "dependencies": {
-    "@pwa-fundament/reactivity": "^1.0.0-beta1"
+    "@pwa-fundament/reactivity": "^1.0.0-beta1",
+    "material-symbols": "^0.22.2"
   }
 }
