@@ -1,6 +1,4 @@
-import * as React from "bloatless-react";
-
-import Button, { ButtonStyle } from "./button";
+import * as React from "@pwa-fundament/reactivity";
 
 import { ModalContentWindow } from "./modal";
 
@@ -61,26 +59,6 @@ export default function Popover(
   });
 
   return popover;
-}
-
-export function PopoverButton(
-  isOpen: React.State<boolean>,
-  buttonLabel: string,
-  buttonStyle: ButtonStyle,
-  mainElement: HTMLElement,
-  popoverButtons: HTMLButtonElement[]
-) {
-  const coordinates: PopoverCoordinates = new PopoverCoordinates();
-
-  function openPopover(e: MouseEvent) {
-    openPopoverAtClickLocation(isOpen, coordinates, e);
-  }
-
-  document.body.append(
-    Popover(isOpen, coordinates, mainElement, popoverButtons)
-  );
-
-  return Button(buttonLabel, buttonStyle, openPopover);
 }
 
 export function openPopoverAtClickLocation(

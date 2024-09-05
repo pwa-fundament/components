@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pwa-fundament/components/issues"
   },
-  "homepage": "https://github.com/pwa-fundament/components#readme"
+  "homepage": "https://github.com/pwa-fundament/components#readme",
+  "dependencies": {
+    "@pwa-fundament/reactivity": "^1.0.0-beta1"
+  }
 }

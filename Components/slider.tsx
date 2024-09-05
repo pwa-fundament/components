@@ -1,4 +1,4 @@
-import * as React from "bloatless-react";
+import * as React from "@pwa-fundament/reactivity";
 
 export default function Slider(
   value: React.State<number>,

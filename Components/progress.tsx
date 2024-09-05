@@ -1,4 +1,4 @@
-import * as React from "bloatless-react";
+import * as React from "@pwa-fundament/reactivity";
 
 export default function ProgressBar(
   percentValueOrUndefined: React.State<number | undefined>
