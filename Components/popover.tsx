@@ -3,12 +3,14 @@ import * as React from "@pwa-fundament/reactivity";
 import { ModalContentWindow } from "./modal";
 
 export class PopoverModel {
-    isOpen = new React.State(false);
+    isOpen: React.State<boolean>;
 
     x: number;
     y: number;
 
     constructor(x?: number, y?: number) {
+	this.isOpen = new React.State(false);
+
         this.x = x ?? 0;
         this.y = y ?? 0;
     }
