@@ -2,7 +2,9 @@ import * as React from "@pwa-fundament/reactivity";
 
 import { ModalContentWindow } from "./modal";
 
-export class PopoverCoordinates {
+export class PopoverModel {
+    isOpen = new React.State(false);
+
     x: number;
     y: number;
 
@@ -10,18 +12,25 @@ export class PopoverCoordinates {
         this.x = x ?? 0;
         this.y = y ?? 0;
     }
+
+    open() {
+	this.isOpen.value = true;
+    }
+
+    close() {
+	this.isOpen.value = false;
+    }
 }
 
 export function Popover(
-    isOpen: React.State<boolean>,
-    coordinates: PopoverCoordinates,
+    model: PopoverModel,
     mainElement: HTMLElement,
     buttons: HTMLButtonElement[],
 ): HTMLDivElement {
-    const popover = ModalContentWindow(isOpen, mainElement, buttons);
+    const popover = ModalContentWindow(model.isOpen, mainElement, buttons);
     popover.classList.add("popover");
 
-    isOpen.subscribe((newValue) => {
+    model.isOpen.subscribe((newValue) => {
         if (newValue == false) return;
 
         // reset old styles
@@ -33,8 +42,8 @@ export function Popover(
         const height = popover.offsetHeight;
 
         // get dimentions
-        let top = coordinates.y - height / 2;
-        let left = coordinates.x - width / 2;
+        let top = model.y - height / 2;
+        let left = model.x - width / 2;
 
         // guard offset to top/left
         if (top < 0) {
@@ -63,7 +72,7 @@ export function Popover(
 
 export function openPopoverAtClickLocation(
     isPopoverOpen: React.State<boolean>,
-    coordinates: PopoverCoordinates,
+    coordinates: PopoverModel,
     clickEvent: MouseEvent,
 ): void {
     coordinates.x = clickEvent.clientX;
