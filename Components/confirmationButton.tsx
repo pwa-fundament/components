@@ -1,4 +1,5 @@
 import * as React from "@pwa-fundament/reactivity";
+import {Icon} from "./icon";
 
 export function ConfirmationButton(
     actionLabel: string,
@@ -30,8 +31,8 @@ export function ConfirmationButton(
                 on:click={cancelRequest}
                 toggle:hidden={isActionNotRequested}
             >
-                {cancelLabel}
-                <span class="icon">undo</span>
+		{cancelLabel}
+		{Icon("undo")}
             </button>
             <button
                 class="danger flex-1"
@@ -39,7 +40,7 @@ export function ConfirmationButton(
                 toggle:hidden={isActionRequested}
             >
                 {actionLabel}
-                <span class="icon">{icon}</span>
+		{Icon(icon)}
             </button>
             <button
                 class="danger flex-1"
@@ -47,7 +48,7 @@ export function ConfirmationButton(
                 toggle:hidden={isActionNotRequested}
             >
                 {actionLabel}
-                <span class="icon">warning</span>
+		{Icon("warning")}
             </button>
         </div>
     );
