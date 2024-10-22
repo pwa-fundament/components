@@ -13,11 +13,11 @@ export class PopoverModel {
         this.y = y ?? 0;
     }
 
-    open() {
+    open = () => {
 	this.isOpen.value = true;
     }
 
-    close() {
+    close = () => {
 	this.isOpen.value = false;
     }
 }
