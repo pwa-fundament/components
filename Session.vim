@@ -192,6 +192,7 @@ set runtimepath=~/.vim,~/.vim/plugged/coc.nvim,~/.vim/plugged/emmet-vim,~/.vim/p
 set shiftwidth=4
 set smarttab
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set window=36
 let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -208,14 +209,15 @@ endif
 badd +20 Components/progressBar.tsx
 badd +15 Components/select.tsx
 badd +7 Components/icon.tsx
-badd +0 Components/confirmationButton.tsx
+badd +37 Components/confirmationButton.tsx
 badd +0 package.json
+badd +0 Components/popover.tsx
 argglobal
 %argdel
 set stal=2
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit Components/confirmationButton.tsx
+edit Components/popover.tsx
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -235,9 +237,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 96) / 192)
-exe 'vert 2resize ' . ((&columns * 80 + 96) / 192)
-exe 'vert 3resize ' . ((&columns * 79 + 96) / 192)
+exe 'vert 1resize ' . ((&columns * 31 + 118) / 237)
+exe 'vert 2resize ' . ((&columns * 102 + 118) / 237)
+exe 'vert 3resize ' . ((&columns * 102 + 118) / 237)
 argglobal
 enew
 file NERD_tree_tab_2
@@ -551,12 +553,12 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 42 - ((14 * winheight(0) + 12) / 25)
+let s:l = 10 - ((9 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 42
-normal! $
+keepjumps 10
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("Components/select.tsx", ":p")) | buffer Components/select.tsx | else | edit Components/select.tsx | endif
@@ -692,7 +694,7 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 12) / 25)
+let s:l = 12 - ((11 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -700,9 +702,9 @@ keepjumps 12
 normal! 013|
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 96) / 192)
-exe 'vert 2resize ' . ((&columns * 80 + 96) / 192)
-exe 'vert 3resize ' . ((&columns * 79 + 96) / 192)
+exe 'vert 1resize ' . ((&columns * 31 + 118) / 237)
+exe 'vert 2resize ' . ((&columns * 102 + 118) / 237)
+exe 'vert 3resize ' . ((&columns * 102 + 118) / 237)
 tabnext
 edit package.json
 let s:save_splitbelow = &splitbelow
@@ -721,8 +723,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 96) / 192)
-exe 'vert 2resize ' . ((&columns * 160 + 96) / 192)
+exe '1resize ' . ((&lines * 25 + 18) / 37)
+exe 'vert 1resize ' . ((&columns * 31 + 118) / 237)
+exe '2resize ' . ((&lines * 25 + 18) / 37)
+exe 'vert 2resize ' . ((&columns * 160 + 118) / 237)
 argglobal
 enew
 file NERD_tree_tab_3
@@ -1043,8 +1047,10 @@ normal! zt
 keepjumps 11
 normal! 030|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 96) / 192)
-exe 'vert 2resize ' . ((&columns * 160 + 96) / 192)
+exe '1resize ' . ((&lines * 25 + 18) / 37)
+exe 'vert 1resize ' . ((&columns * 31 + 118) / 237)
+exe '2resize ' . ((&lines * 25 + 18) / 37)
+exe 'vert 2resize ' . ((&columns * 160 + 118) / 237)
 tabnext 1
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0

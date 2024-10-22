@@ -14,12 +14,12 @@ export class PopoverModel {
     }
 
     open = () => {
-	this.isOpen.value = true;
-    }
+        this.isOpen.value = true;
+    };
 
     close = () => {
-	this.isOpen.value = false;
-    }
+        this.isOpen.value = false;
+    };
 }
 
 export function Popover(
@@ -29,6 +29,7 @@ export function Popover(
 ): HTMLDivElement {
     const popover = ModalContentWindow(model.isOpen, mainElement, buttons);
     popover.classList.add("popover");
+    popover.addEventListener("click", (e) => e.stopPropagation());
 
     model.isOpen.subscribe((newValue) => {
         if (newValue == false) return;
