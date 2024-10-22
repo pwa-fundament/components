@@ -6,15 +6,20 @@ export function Slider(
     max: number = 100,
     step: number = 1,
 ): HTMLInputElement {
-    const valueDiv: HTMLDivElement = <div></div>;
+    const valueDiv: HTMLDivElement = <div class="value"></div>;
+    const thumbDiv: HTMLDivElement = <div class="thumb"></div>;
+    
     value.subscribe((newValue) => {
-        const valueInPercent = (newValue / max) * 100;
+	const valueInPercent = (newValue / max) * 100;
+
         valueDiv.style.width = `${valueInPercent}%`;
+        thumbDiv.style.left = `${valueInPercent}%`;
     });
 
     return (
         <div class="slider-wrapper">
             {valueDiv}
+            {thumbDiv}
             <input
                 type="range"
                 min={min}
