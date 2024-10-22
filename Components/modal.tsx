@@ -17,10 +17,12 @@ export function ModalContentWindow(
     mainElement: HTMLElement,
     buttons: HTMLButtonElement[],
 ): HTMLDivElement {
-    return (
+    const modal = (
         <div class="modal-window" toggle:open={isOpen}>
             {mainElement}
             <div class="control-row">{...buttons}</div>
         </div>
     );
+    modal.addEventListener("click", (e) => e.stopPropagation());
+    return modal;
 }
