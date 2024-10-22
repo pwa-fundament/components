@@ -1,4 +1,5 @@
 import * as React from "@pwa-fundament/reactivity";
+import { Icon } from "./icon";
 
 export function Select(
     value: React.State<string>,
@@ -12,7 +13,7 @@ export function Select(
                 bind:value={value}
                 children:append={[options, StringToOption]}
             ></select>
-            <span class="material-icons">arrow_drop_down</span>
+            {Icon("arrow_drop_down")}
         </div>
     );
 }
