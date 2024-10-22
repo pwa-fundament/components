@@ -1,11 +1,14 @@
 import * as React from "@pwa-fundament/reactivity";
 
 export function ProgressBar(
-    percentValueOrUndefined: React.State<number | undefined>,
+    percentValue:
+        | React.State<number | undefined>
+        | React.State<number>
+        | React.State<undefined>,
 ): HTMLProgressElement {
     const valueDiv: HTMLDivElement = <div></div>;
 
-    percentValueOrUndefined.subscribe((newValue) => {
+    percentValue.subscribe((newValue) => {
         if (newValue == undefined) {
             valueDiv.style.width = "";
             valueDiv.setAttribute("indeterminate", "");
